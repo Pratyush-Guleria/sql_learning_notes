@@ -1,9 +1,10 @@
 -- 1. Creating a Data Base 'schooldb'--
----CREATE DATABASE schooldb;---
+DROP DATABASE IF EXISTS schooldb;
 
--- Using Data Base 
--- USE schooldb;--
-SHOW TABLES;
+CREATE DATABASE schooldb;
+
+USE schooldb;
+
 -- 2. Creating Table 'students_info' : student_id, name, age, marks, department with proper columns and constraints --
 CREATE TABLE students_info(
     student_id INT AUTO_INCREMENT PRIMARY KEY,

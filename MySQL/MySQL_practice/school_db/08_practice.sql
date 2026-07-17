@@ -22,9 +22,10 @@ FROM student_info;
 
 
 -- 4. Show students who scored above their department's average
-SELECT 
-    name, 
-    marks,
-    department,
-    (SELECT AVG(marks) FROM student_info) AS Class_Average_Marks
-FROM student_info;
+SELECT s1.name, s1.department, s1.marks
+FROM student_info s1
+WHERE s1.marks > (
+    SELECT AVG(s2.marks)
+    FROM student_info s2
+    WHERE s2.department = s1.department
+);
